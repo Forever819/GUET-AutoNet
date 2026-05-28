@@ -7,7 +7,8 @@
 后台不断ping 阿里DNS检测是否可以上网 若失败则执行请求
 
 需要配置脚本 并设置电脑的脚本运行许可(默认Windows不允许任何脚本运行)
-
+同时Windows 的 NTFS 文件系统有一个叫 Zone.Identifier 的备用数据流（Alternate Data Stream），文件从浏览器/邮件下载时会自动打上这个标记，表示"来源不可信"。
+PowerShell 会因为这个标记拒绝执行脚本，即使你的执行策略已经改成了 RemoteSigned。解决方法右键文件 → 属性 → 底部勾选「解除锁定」→ 确定
 步骤:
 1.编辑AutoNet.ps1 填写你的相关信息 保存
 2.创建SlientStart的快捷方式
